@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
+  
   const {unityProvider,isLoaded,sendMessage,requestFullscreen,unload,loadingProgression} = useUnityContext({
     loaderUrl: "/unitybuild/crateclicker.loader.js",
     dataUrl: "/unitybuild/crateclicker.data",
@@ -60,7 +61,7 @@ function App() {
 
       {/* game control panel */}
       <p style={{textAlign:'center',marginBottom:'0px'}}>Once you played,You will need to reload to play again</p>
-      
+
       <div style={{display:'flex',justifyContent:'center',paddingTop:'20px'}}>
         <button style={{marginRight:'8px',backgroundColor:'#C85306',padding:'6px 20px',border:'none',color:'white'}} onClick={() => handleClickStartGame(8)}>
           Start Short Game

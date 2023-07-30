@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
-  
-  const {unityProvider,isLoaded,sendMessage,requestFullscreen,unload,loadingProgression} = useUnityContext({
+
+  const { unityProvider, isLoaded, sendMessage, requestFullscreen, unload, loadingProgression } = useUnityContext({
     loaderUrl: "/unitybuild/crateclicker.loader.js",
     dataUrl: "/unitybuild/crateclicker.data",
     frameworkUrl: "/unitybuild/crateclicker.framework.js",
@@ -43,7 +43,7 @@ function App() {
   };
   return (
     <>
-      <h1 style={{textAlign:'center',fontSize:'24px'}}>Crate Clicker!</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '24px' }}>Crate Clicker!</h1>
       {/* Unity game div */}
       <div >
         {isLoaded === false && (
@@ -54,24 +54,24 @@ function App() {
         )}
         <Unity
           unityProvider={unityProvider}
-          style={{width:'100%',height:'70vh'}}
+          style={{ width: '100%', height: '70vh' }}
         />
       </div>
       {/* Unity game div end*/}
 
       {/* game control panel */}
-      <p style={{textAlign:'center',marginBottom:'0px'}}>Once you played,You will need to reload to play again</p>
 
-      <div style={{display:'flex',justifyContent:'center',paddingTop:'20px'}}>
-        <button style={{marginRight:'8px',backgroundColor:'#C85306',padding:'6px 20px',border:'none',color:'white'}} onClick={() => handleClickStartGame(8)}>
+      <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '20px' }}>
+        <button style={{ marginRight: '8px', backgroundColor: '#C85306', padding: '6px 20px', border: 'none', color: 'white',cursor:'pointer' }} onClick={() => handleClickStartGame(8)}>
           Start Short Game
         </button>
-        <button style={{marginRight:'8px',backgroundColor:'#F2BCBE',padding:'6px 20px',border:'none',color:'black'}} onClick={() => handleClickStartGame(15)}>
+        <button style={{ marginRight: '8px', backgroundColor: '#F2BCBE', padding: '6px 20px', border: 'none', color: 'black',cursor:'pointer' }} onClick={() => handleClickStartGame(15)}>
           Start Long Game
         </button>
-        <button style={{marginRight:'8px',backgroundColor:'#9CCFEF',padding:'6px 20px',border:'none',color:'black'}} onClick={handleClickFullscreen}>Fullscreen</button>
-        <button style={{backgroundColor:'#FD3717',padding:'6px 20px',border:'none',color:'white'}} onClick={handleClickUnload}>Unload</button>
+        <button style={{ marginRight: '8px', backgroundColor: '#9CCFEF', padding: '6px 20px', border: 'none', color: 'black',cursor:'pointer' }} onClick={handleClickFullscreen}>Fullscreen</button>
+        <button style={{ backgroundColor: '#FD3717', padding: '6px 20px', border: 'none', color: 'white',cursor:'pointer' }} onClick={handleClickUnload}>Unload</button>
       </div>
+      <p style={{ textAlign: 'center', marginBottom: '0px' }}>Once you played,You will need to reload to play again</p>
       {/* game control panel end*/}
     </>
 
